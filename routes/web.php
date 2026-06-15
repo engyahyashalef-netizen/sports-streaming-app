@@ -10,15 +10,15 @@ Route::get('/', function () {
 })->name('home');
 
 // مسارات المباريات
-Route::resource('games', GameController);
+Route::resource('games', 'GameController');
 Route::get('/games/live', [GameController::class, 'live'])->name('games.live');
 Route::get('/games/upcoming', [GameController::class, 'upcoming'])->name('games.upcoming');
 
 // مسارات القنوات
-Route::resource('channels', ChannelController);
+Route::resource('channels', 'ChannelController');
 
 // مسارات الفرق
-Route::resource('teams', TeamController);
+Route::resource('teams', 'TeamController');
 
 // مسار البث المباشر
 Route::get('/watch/{game}', function ($game) {
