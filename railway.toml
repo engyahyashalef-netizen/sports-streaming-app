@@ -1,12 +1,10 @@
 [build]
-builder = "dockerfile"
-dockerfilePath = "Dockerfile"
+builder = "nixpacks"
 
 [deploy]
 startCommand = "php artisan serve --host=0.0.0.0 --port=$PORT"
 restartPolicyMaxRetries = 10
 healthcheckPath = "/"
-healthcheckTimeout = 30
 
 [env]
 PORT = "8080"
